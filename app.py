@@ -12,6 +12,10 @@ messages = [{'title': 'Message One',
              'content': 'Message Two Content'}
             ]
 						
+@app.route('/')
+def index():
+	return render_template('index.html', messages=messages)
+
 
 @app.route('/create/', methods=('GET', 'POST'))
 def create():
